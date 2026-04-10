@@ -108,7 +108,7 @@ export default function Headerapp() {
         <span className='hidden sm:block font-semibold' >Sign in</span>
       </button>
       <button
-          
+           onClick={() => setIsCartOpen(true)}
         className="flex items-center gap-3 sm:gap-6 "
       >
         <svg
@@ -127,7 +127,7 @@ export default function Headerapp() {
           <path d="M3 6h18" />
           <path d="M16 10a4 4 0 0 1-8 0" />
         </svg>
-        <span className="hidden sm:block font-semibold" onClick={() => setIsCartOpen(true)}>My Cart</span>
+        <span className="hidden sm:block font-semibold">My Cart</span>
       </button>
     </div>
   </div>
