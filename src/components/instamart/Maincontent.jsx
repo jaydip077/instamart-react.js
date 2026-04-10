@@ -1,4 +1,5 @@
 import React from 'react'
+import Banana from "./images/robusta banana.avif"
 
 export default function Maincontent() {
   return (
@@ -574,7 +575,7 @@ export default function Maincontent() {
         <div className="min-w-40 sm:min-w-[180px]  sm:w-[180px] flex flex-col group cursor-pointer">
           <div className="relative h-[200px] w-full bg-white rounded-2xl flex items-center justify-center mb-3">
             <img
-              src="asstets/images/robusta banana.avif"
+              src={Banana}
               alt="Banana"
               className="h-32 object-contain mix-blend-multiply group-hover:scale-105 transition-transform duration-300"
             />
@@ -655,7 +656,7 @@ export default function Maincontent() {
         <div className="min-w-40 sm:min-w-[180px]  sm:w-[180px] flex flex-col group cursor-pointer">
           <div className="relative h-[200px] w-full bg-white rounded-2xl flex items-center justify-center mb-3">
             <img
-              src="asstets/images/robusta banana.avif"
+              src={Banana}
               alt="Banana"
               className="h-32 object-contain mix-blend-multiply group-hover:scale-105 transition-transform duration-300"
             />
@@ -836,7 +837,7 @@ export default function Maincontent() {
         <div className="flex flex-col items-center gap-3 group cursor-pointer">
           <div className="w-full aspect-[4/5] bg-blue-50/50 rounded-2xl flex items-center justify-center p-2 group-hover:bg-blue-100/50 transition-colors">
             <img
-              src="https://images.unsplash.com/photo-1595412017643-ed80030642f3?auto=format&fit=crop&q=80&w=200"
+              src="https://www.jiomart.com/images/product/original/rvycjdcejg/freshtige-mixed-dry-fruit-and-nut-mix-1kg-13-seeds-dry-fruits-healthy-daily-bites-trail-mix-product-images-orvycjdcejg-p602342199-0-202306120902.jpg?im=Resize=(420,420)"
               alt="Dry Fruits"
               className="w-full h-full object-contain mix-blend-multiply"
             />

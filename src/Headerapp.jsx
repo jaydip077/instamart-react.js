@@ -4,6 +4,7 @@ export default function Headerapp() {
   const [isModalOpen, setIsModalOpen] = useState(true);
   const [isOpen, setIsOpen] = useState(false);
   const [isCartOpen, setIsCartOpen] = useState(false);
+  const [open, setOpen] = useState(false);
 
   return (
    <>
@@ -23,20 +24,22 @@ export default function Headerapp() {
                 instamart
               </span> */}
             </div>
-
+ 
       </a>
+     
       {/* Location Selector */}
       <div className="hidden md:flex flex-col border-l pl-4 cursor-pointer">
-        <div className="flex items-center gap-1.5 text-blue-600 hover:text-blue-700 transition-colors">
-          <span className="font-semibold text-sm sm:text-base underline text-blue-600">
-                Add your location
-              </span>
-        </div>
+        
         <div className="flex items-center gap-1 mt-1">
           <button
                 onClick={() => setIsModalOpen(true)}
                 className="text-xs sm:text-sm text-gray-400 hover:text-blue-600"
               >
+                <div className="flex items-center gap-1.5 text-blue-600 hover:text-blue-700 transition-colors">
+          <span className="font-semibold text-sm sm:text-base underline text-blue-600">
+                Add your location
+              </span>
+        </div>
                 To see items in your area
               </button>
           <svg
@@ -105,7 +108,7 @@ export default function Headerapp() {
           <circle cx={12} cy={10} r={3} />
           <path d="M7 20.662V19a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v1.662" />
         </svg>
-        <span className='hidden sm:block font-semibold' >Sign in</span>
+        <span className=' sm:hidden md:block lg:block' >Sign in</span>
       </button>
       <button
            onClick={() => setIsCartOpen(true)}
@@ -127,9 +130,27 @@ export default function Headerapp() {
           <path d="M3 6h18" />
           <path d="M16 10a4 4 0 0 1-8 0" />
         </svg>
-        <span className="hidden sm:block font-semibold">My Cart</span>
+        <span className=" sm:hidden md:block lg:block">My Cart</span>
       </button>
     </div>
+     <div className='flex justify-center md:hidden lg:hidden xl:hidden w-6 h-6 cursor-pointer'>
+        <button onClick={() => setOpen(!open)}>
+           <svg
+      width="30"
+      height="30"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="black"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    >
+      <line x1="3" y1="6" x2="21" y2="6" />
+      <line x1="3" y1="12" x2="21" y2="12" />
+      <line x1="3" y1="18" x2="21" y2="18" />
+    </svg>
+        </button>
+      </div>
   </div>
 </header>
 
@@ -260,7 +281,7 @@ export default function Headerapp() {
   
 
 
-    <>
+  
        {isModalOpen && (
         <div
           className="fixed inset-0 bg-black/40 flex items-center justify-center z-50 px-3"
@@ -330,9 +351,55 @@ export default function Headerapp() {
           </div>
         </div>
       )}
+
+      {/* mobile toggler */}
+      <nav className="bg-white shadow-md px-4 py-3">
+      <div className="flex justify-between items-center md:hidden lg:hidden xl:hidden">
+
+        {/* Left - Toggler + Logo */}
+        <div className="flex items-center gap-3">
+          
+         
+        </div>
+
+        {/* Right - Desktop Menu */}
+        <div className="hidden md:flex items-center gap-6">
+
+          {/* Location */}
+          <div className="flex items-center gap-1 cursor-pointer">
+            📍 <span>Rajkot</span>
+          </div>
+
+          {/* Sign In */}
+          <button className="hover:text-blue-500" >Sign In</button>
+
+          {/* Cart */}
+          <div className="relative cursor-pointer">
+            🛒
+            <span className="absolute -top-2 -right-2 bg-red-500 text-white text-xs px-1 rounded-full">
+              2
+            </span>
+          </div>
+
+        </div>
+      </div>
+
+      {/* Mobile Menu */}
+      {open && (
+        <div className="md:hidden mt-4 flex flex-col gap-4 bg-gray-100 p-4 rounded-lg">
+
+         <button onClick={() => setIsModalOpen(true)} className="cursor-pointer text-left">📍 Select Location</button>
+
+          <button className="text-left" onClick={() => setIsOpen(true)}>👤 Sign In</button>
+
+          <button className="cursor-pointer text-left" onClick={() => setIsCartOpen(true)}>🛒 Cart </button>
+
+        </div>
+      )}
+    </nav>
     </>
   
 
-   </>
+  
   )
 }
